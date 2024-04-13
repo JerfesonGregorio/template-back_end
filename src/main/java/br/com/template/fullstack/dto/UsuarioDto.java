@@ -1,36 +1,21 @@
-package br.com.template.fullstack.entity;
+package br.com.template.fullstack.dto;
 
-import br.com.template.fullstack.dto.UsuarioDto;
-import jakarta.persistence.*;
+import br.com.template.fullstack.entity.UsuarioEntity;
 import org.springframework.beans.BeanUtils;
 
-import java.util.Objects;
+public class UsuarioDto {
 
-@Entity
-@Table(name = "TEST_USUARIO")
-public class UsuarioEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    @Column(nullable = false)
     private String nome;
-
-    @Column(nullable = false, unique = true)
     private String login;
-
-    @Column(nullable = false, unique = true)
     private String email;
-
-    @Column(nullable = false)
     private String senha;
 
-    public UsuarioEntity(UsuarioDto usuario) {
+    public UsuarioDto(UsuarioEntity usuario) {
         BeanUtils.copyProperties(usuario, this);
     }
 
-    public UsuarioEntity() {
+    public UsuarioDto() {
 
     }
 
@@ -72,18 +57,5 @@ public class UsuarioEntity {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        UsuarioEntity that = (UsuarioEntity) o;
-        return id == that.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
     }
 }
