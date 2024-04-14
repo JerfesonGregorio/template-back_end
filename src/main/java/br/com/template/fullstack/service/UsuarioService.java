@@ -19,7 +19,7 @@ public class UsuarioService {
         return usuarios.stream().map(UsuarioDto::new).toList();
     }
 
-    public UsuarioDto buscaPorId(Long id) {
+    public UsuarioDto buscarPorId(Long id) {
         return new UsuarioDto(usuarioRepository.findById(id).get());
     }
 

@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/usuario")
+@CrossOrigin
 public class UsuarioController {
 
     @Autowired
@@ -20,6 +21,13 @@ public class UsuarioController {
         List<UsuarioDto> usuarioDtos;
         usuarioDtos = usuarioService.listarTodos();
         return usuarioDtos;
+    }
+
+    @GetMapping("/{id}")
+    public UsuarioDto buscarPorId(Long id) {
+        UsuarioDto usuarioDto;
+        usuarioDto = usuarioService.buscarPorId(id);
+        return usuarioDto;
     }
 
     @PostMapping
