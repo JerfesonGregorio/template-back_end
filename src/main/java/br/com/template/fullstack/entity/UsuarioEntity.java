@@ -1,6 +1,6 @@
 package br.com.template.fullstack.entity;
 
-import br.com.template.fullstack.dto.UsuarioDto;
+import br.com.template.fullstack.dto.UsuarioDTO;
 import jakarta.persistence.*;
 import org.springframework.beans.BeanUtils;
 
@@ -26,7 +26,7 @@ public class UsuarioEntity {
     @Column(nullable = false)
     private String senha;
 
-    public UsuarioEntity(UsuarioDto usuario) {
+    public UsuarioEntity(UsuarioDTO usuario) {
         BeanUtils.copyProperties(usuario, this);
     }
 

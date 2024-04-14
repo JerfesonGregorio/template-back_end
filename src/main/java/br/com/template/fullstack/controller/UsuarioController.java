@@ -1,6 +1,6 @@
 package br.com.template.fullstack.controller;
 
-import br.com.template.fullstack.dto.UsuarioDto;
+import br.com.template.fullstack.dto.UsuarioDTO;
 import br.com.template.fullstack.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,26 +17,26 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @GetMapping
-    public List<UsuarioDto> listarTodos() {
-        List<UsuarioDto> usuarioDtos;
+    public List<UsuarioDTO> listarTodos() {
+        List<UsuarioDTO> usuarioDtos;
         usuarioDtos = usuarioService.listarTodos();
         return usuarioDtos;
     }
 
     @GetMapping("/{id}")
-    public UsuarioDto buscarPorId(Long id) {
-        UsuarioDto usuarioDto;
+    public UsuarioDTO buscarPorId(Long id) {
+        UsuarioDTO usuarioDto;
         usuarioDto = usuarioService.buscarPorId(id);
         return usuarioDto;
     }
 
     @PostMapping
-    public void inserir(@RequestBody UsuarioDto usuario) {
+    public void inserir(@RequestBody UsuarioDTO usuario) {
         usuarioService.inserir(usuario);
     }
 
     @PutMapping
-    public UsuarioDto alterar(@RequestBody UsuarioDto usuarioAlterado) {
+    public UsuarioDTO alterar(@RequestBody UsuarioDTO usuarioAlterado) {
         return usuarioService.alterar(usuarioAlterado);
     }
 

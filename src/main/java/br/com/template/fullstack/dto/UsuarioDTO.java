@@ -3,7 +3,7 @@ package br.com.template.fullstack.dto;
 import br.com.template.fullstack.entity.UsuarioEntity;
 import org.springframework.beans.BeanUtils;
 
-public class UsuarioDto {
+public class UsuarioDTO {
 
     private long id;
     private String nome;
@@ -11,11 +11,11 @@ public class UsuarioDto {
     private String email;
     private String senha;
 
-    public UsuarioDto(UsuarioEntity usuario) {
+    public UsuarioDTO(UsuarioEntity usuario) {
         BeanUtils.copyProperties(usuario, this);
     }
 
-    public UsuarioDto() {
+    public UsuarioDTO() {
 
     }
 

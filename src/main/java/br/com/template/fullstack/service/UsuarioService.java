@@ -1,6 +1,6 @@
 package br.com.template.fullstack.service;
 
-import br.com.template.fullstack.dto.UsuarioDto;
+import br.com.template.fullstack.dto.UsuarioDTO;
 import br.com.template.fullstack.entity.UsuarioEntity;
 import br.com.template.fullstack.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,23 +14,23 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    public List<UsuarioDto> listarTodos() {
+    public List<UsuarioDTO> listarTodos() {
         List<UsuarioEntity> usuarios = usuarioRepository.findAll();
-        return usuarios.stream().map(UsuarioDto::new).toList();
+        return usuarios.stream().map(UsuarioDTO::new).toList();
     }
 
-    public UsuarioDto buscarPorId(Long id) {
-        return new UsuarioDto(usuarioRepository.findById(id).get());
+    public UsuarioDTO buscarPorId(Long id) {
+        return new UsuarioDTO(usuarioRepository.findById(id).get());
     }
 
-    public void inserir(UsuarioDto usuario) {
+    public void inserir(UsuarioDTO usuario) {
         UsuarioEntity usuarioEntity = new UsuarioEntity(usuario);
         usuarioRepository.save(usuarioEntity);
     }
 
-    public UsuarioDto alterar(UsuarioDto usuario) {
+    public UsuarioDTO alterar(UsuarioDTO usuario) {
         UsuarioEntity usuarioEntity = new UsuarioEntity(usuario);
-        return new UsuarioDto(usuarioRepository.save(usuarioEntity));
+        return new UsuarioDTO(usuarioRepository.save(usuarioEntity));
     }
 
     public void excluir(Long id) {
