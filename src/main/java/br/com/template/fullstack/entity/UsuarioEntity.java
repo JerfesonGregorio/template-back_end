@@ -7,7 +7,7 @@ import org.springframework.beans.BeanUtils;
 import java.util.Objects;
 
 @Entity
-@Table(name = "TEST_USUARIO")
+@Table(name = "TESTE_USUARIO")
 public class UsuarioEntity {
 
     @Id
