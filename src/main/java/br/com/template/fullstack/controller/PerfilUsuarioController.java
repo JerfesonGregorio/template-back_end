@@ -1,7 +1,6 @@
 package br.com.template.fullstack.controller;
 
 import br.com.template.fullstack.dto.PerfilUsuarioDTO;
-import br.com.template.fullstack.dto.UsuarioDTO;
 import br.com.template.fullstack.service.PerfilUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
