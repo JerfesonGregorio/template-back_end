@@ -1,6 +1,7 @@
 package br.com.template.fullstack.dto;
 
-import br.com.template.fullstack.entity.RecursoEntity;
+
+import br.com.template.fullstack.entity.PerfilEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,14 +10,13 @@ import org.springframework.beans.BeanUtils;
 @Getter
 @Setter
 @NoArgsConstructor
-public class RecursoDTO {
+public class PerfilDTO {
 
     private Long id;
-    private String nome;
-    private String chave;
+    private String descricao;
 
-    public RecursoDTO(RecursoEntity recurso){
-        BeanUtils.copyProperties(recurso, this);
+    public PerfilDTO(PerfilEntity perfil) {
+        BeanUtils.copyProperties(perfil, this);
     }
 
 }
