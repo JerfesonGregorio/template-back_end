@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.BeanUtils;
 
 @Entity
 @Table(name = "TESTE_PERFIL_USUARIO")
@@ -27,11 +28,13 @@ public class PerfilUsuarioEntity {
 
     public PerfilUsuarioEntity(PerfilUsuarioDTO perfilUsuario) {
 
+        BeanUtils.copyProperties(perfilUsuario, this);
+
         if(perfilUsuario != null && perfilUsuario.getUsuario() != null) {
             this.usuario = new UsuarioEntity(perfilUsuario.getUsuario());
         }
 
-        if(perfilUsuario != null && perfilUsuario.getUsuario() != null) {
+        if(perfilUsuario != null && perfilUsuario.getPerfil() != null) {
             this.perfil = new PerfilEntity(perfilUsuario.getPerfil());
         }
 

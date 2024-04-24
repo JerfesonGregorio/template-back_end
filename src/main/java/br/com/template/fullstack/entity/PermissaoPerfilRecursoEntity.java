@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.BeanUtils;
 
 @Getter
 @Setter
@@ -25,6 +26,8 @@ public class PermissaoPerfilRecursoEntity {
     private RecursoEntity recurso;
 
     public PermissaoPerfilRecursoEntity(PermissaoPerfilRecursoDTO permissaoPerfilRecurso) {
+
+        BeanUtils.copyProperties(permissaoPerfilRecurso, this);
 
         if(permissaoPerfilRecurso != null && permissaoPerfilRecurso.getPerfil() != null) {
             this.perfil = new PerfilEntity(permissaoPerfilRecurso.getPerfil());

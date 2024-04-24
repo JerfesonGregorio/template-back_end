@@ -24,5 +24,4 @@ public class PerfilEntity {
         BeanUtils.copyProperties(perfil, this);
     }
 
-
 }

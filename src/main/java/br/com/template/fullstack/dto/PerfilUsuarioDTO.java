@@ -22,7 +22,7 @@ public class PerfilUsuarioDTO {
             this.usuario = new UsuarioDTO(perfilUsuario.getUsuario());
         }
 
-        if(perfilUsuario != null && perfilUsuario.getUsuario() != null) {
+        if(perfilUsuario != null && perfilUsuario.getPerfil() != null) {
             this.perfil = new PerfilDTO(perfilUsuario.getPerfil());
         }
     }

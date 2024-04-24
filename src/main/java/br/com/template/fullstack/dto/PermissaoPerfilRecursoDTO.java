@@ -1,10 +1,6 @@
 package br.com.template.fullstack.dto;
 
-import br.com.template.fullstack.entity.PerfilEntity;
 import br.com.template.fullstack.entity.PermissaoPerfilRecursoEntity;
-import br.com.template.fullstack.entity.RecursoEntity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
