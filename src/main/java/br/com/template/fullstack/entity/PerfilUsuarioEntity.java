@@ -1,8 +1,6 @@
 package br.com.template.fullstack.entity;
 
-import br.com.template.fullstack.dto.PerfilDTO;
 import br.com.template.fullstack.dto.PerfilUsuarioDTO;
-import br.com.template.fullstack.dto.UsuarioDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,6 +36,5 @@ public class PerfilUsuarioEntity {
         }
 
     }
-
 
 }

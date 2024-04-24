@@ -8,8 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
 
-import java.util.Objects;
-
 @Entity
 @Table(name = "TESTE_USUARIO")
 @Getter

@@ -1,6 +1,5 @@
 package br.com.template.fullstack.dto;
 
-
 import br.com.template.fullstack.entity.PerfilEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

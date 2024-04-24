@@ -1,6 +1,5 @@
 package br.com.template.fullstack.controller;
 
-
 import br.com.template.fullstack.dto.PerfilDTO;
 import br.com.template.fullstack.service.PerfilService;
 import org.springframework.beans.factory.annotation.Autowired;
