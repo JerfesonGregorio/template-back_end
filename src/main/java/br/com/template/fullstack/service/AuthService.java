@@ -30,7 +30,7 @@ public class AuthService {
             Authentication authentication = authenticationManager.authenticate(userAuth);
 
             //Busca usuário logado
-            UserDetailsImpl userAuthenticate = (UserDetailsImpl) authentication.getPrincipal();
+            UserDetailsImpl userAuthenticate = (UserDetailsImpl)authentication.getPrincipal();
 
             String token = jwtUtils.generateTokenFromUserDetailsImpl(userAuthenticate);
 
@@ -41,6 +41,6 @@ public class AuthService {
         } catch (BadCredentialsException e) {
             //TODO login ou senha inválidos
         }
-        return null;
+        return new AcessDTO("Acesso negado");
     }
 }

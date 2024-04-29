@@ -19,12 +19,13 @@ public class UserDetailsImpl implements UserDetails {
 
     private String password;
 
-    private Collection<? extends GrantedAuthority> authorities;
-
-    public UserDetailsImpl(Long id, String name, String username, String email, Collection<? extends GrantedAuthority> authorities) {
+    public UserDetailsImpl(Long id, String name, String username, String email, String password,
+                           Collection<? extends GrantedAuthority> authorities) {
+        super();
         this.id = id;
         this.name = name;
         this.username = username;
+        this.password = password;
         this.email = email;
         this.authorities = authorities;
     }
@@ -35,10 +36,13 @@ public class UserDetailsImpl implements UserDetails {
                 usuario.getId(),
                 usuario.getNome(),
                 usuario.getLogin(),
-                usuario.getLogin(),
+                usuario.getEmail(),
+                usuario.getSenha(),
                 new ArrayList<>()
             );
     }
+
+    private Collection<? extends GrantedAuthority> authorities;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

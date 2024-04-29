@@ -23,7 +23,7 @@ public class JwtUtils {
     public String generateTokenFromUserDetailsImpl(UserDetailsImpl userDetail) {
         return Jwts.builder().setSubject(userDetail.getUsername())
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationMs))
+                .setExpiration(new Date(new Date().getTime() + jwtExpirationMs))
                 .signWith(getSigninKey(), SignatureAlgorithm.HS512).compact();
     }
 
@@ -45,23 +45,7 @@ public class JwtUtils {
         } catch (IllegalArgumentException e) {
             System.out.println("Token Argumento inválido " + e.getMessage());
         }
+
         return false;
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

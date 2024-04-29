@@ -1,6 +1,6 @@
 INSERT INTO TESTE_USUARIO (ID, NOME, EMAIL, LOGIN, SENHA) VALUES (1, 'Root', 'root@mail.com', 'root', '1234');
-INSERT INTO TESTE_USUARIO (ID, NOME, EMAIL, LOGIN, SENHA) VALUES (2, 'User1', 'user1@mail.com', 'user1', 'abcd');
-INSERT INTO TESTE_USUARIO (ID, NOME, EMAIL, LOGIN, SENHA) VALUES (3, 'User2', 'user2@mail.com', 'user2', 'efgh');
+INSERT INTO TESTE_USUARIO (ID, NOME, EMAIL, LOGIN, SENHA) VALUES (2, 'User1', 'user1@mail.com', 'users1', 'abcd');
+INSERT INTO TESTE_USUARIO (ID, NOME, EMAIL, LOGIN, SENHA) VALUES (3, 'User2', 'user2@mail.com', 'users2', 'efgh');
 INSERT INTO TESTE_USUARIO (ID, NOME, EMAIL, LOGIN, SENHA) VALUES (4, 'User3', 'user3@mail.com', 'user3', 'ijkl');
 
 INSERT INTO TESTE_PERFIL (ID, DESCRICAO) VALUES (1, 'User');
