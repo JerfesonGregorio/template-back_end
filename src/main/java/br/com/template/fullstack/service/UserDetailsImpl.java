@@ -1,8 +1,10 @@
 package br.com.template.fullstack.service;
 
+import br.com.template.fullstack.entity.UsuarioEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class UserDetailsImpl implements UserDetails {
@@ -18,6 +20,25 @@ public class UserDetailsImpl implements UserDetails {
     private String password;
 
     private Collection<? extends GrantedAuthority> authorities;
+
+    public UserDetailsImpl(Long id, String name, String username, String email, Collection<? extends GrantedAuthority> authorities) {
+        this.id = id;
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.authorities = authorities;
+    }
+
+    public static UserDetailsImpl build(UsuarioEntity usuario) {
+
+        return new UserDetailsImpl(
+                usuario.getId(),
+                usuario.getNome(),
+                usuario.getLogin(),
+                usuario.getLogin(),
+                new ArrayList<>()
+            );
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
