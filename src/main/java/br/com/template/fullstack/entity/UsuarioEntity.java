@@ -1,6 +1,7 @@
 package br.com.template.fullstack.entity;
 
 import br.com.template.fullstack.dto.UsuarioDTO;
+import br.com.template.fullstack.entity.enums.TipoSituacaoUsuario;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -31,6 +32,10 @@ public class UsuarioEntity {
 
     @Column(nullable = false)
     private String senha;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private TipoSituacaoUsuario situacao;
 
     public UsuarioEntity(UsuarioDTO usuario) {
         BeanUtils.copyProperties(usuario, this);

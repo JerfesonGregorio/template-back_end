@@ -1,6 +1,7 @@
 package br.com.template.fullstack.dto;
 
 import br.com.template.fullstack.entity.UsuarioEntity;
+import br.com.template.fullstack.entity.enums.TipoSituacaoUsuario;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,6 +17,7 @@ public class UsuarioDTO {
     private String login;
     private String email;
     private String senha;
+    private TipoSituacaoUsuario situacao;
 
     public UsuarioDTO(UsuarioEntity usuario) {
         BeanUtils.copyProperties(usuario, this);

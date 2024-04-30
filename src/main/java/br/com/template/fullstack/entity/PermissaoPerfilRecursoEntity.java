@@ -11,6 +11,7 @@ import org.springframework.beans.BeanUtils;
 @Setter
 @NoArgsConstructor
 @Entity
+@Table(name = "PERMISSAO_PERFIL_RECURSO")
 public class PermissaoPerfilRecursoEntity {
 
     @Id
