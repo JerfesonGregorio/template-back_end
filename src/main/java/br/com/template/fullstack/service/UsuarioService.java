@@ -2,6 +2,7 @@ package br.com.template.fullstack.service;
 
 import br.com.template.fullstack.dto.UsuarioDTO;
 import br.com.template.fullstack.entity.UsuarioEntity;
+import br.com.template.fullstack.entity.enums.TipoSituacaoUsuario;
 import br.com.template.fullstack.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -30,6 +31,14 @@ public class UsuarioService {
     public void inserir(UsuarioDTO usuario) {
         UsuarioEntity usuarioEntity = new UsuarioEntity(usuario);
         usuarioEntity.setSenha(passwordEncoder.encode(usuario.getSenha()));
+        usuarioRepository.save(usuarioEntity);
+    }
+
+    public void inserirNovoUsuario(UsuarioDTO usuario) {
+        UsuarioEntity usuarioEntity = new UsuarioEntity(usuario);
+        usuarioEntity.setSenha(passwordEncoder.encode(usuario.getSenha()));
+        usuarioEntity.setSituacao(TipoSituacaoUsuario.PENDENTE);
+        usuarioEntity.setId(0);
         usuarioRepository.save(usuarioEntity);
     }
 
