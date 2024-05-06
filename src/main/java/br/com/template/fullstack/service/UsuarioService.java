@@ -57,9 +57,12 @@ public class UsuarioService {
         verificador.setDataExpiracao(Instant.now().plusMillis(900000));
         usuarioVerificadorRepository.save(verificador);
 
-        emailService.enviarEmailTexto(usuario.getEmail(),
-                "Novo usuário cadastrado",
-                "Você recebeu um email de cadastro, o número para validação é " + verificador.getUuid());
+        new Thread(() -> {
+            emailService.enviarEmailTexto(usuario.getEmail(),
+                    "Novo usuário cadastrado",
+                    "Você recebeu um email de cadastro, o número para validação é " +
+                            "http://localhost:8080/auth/verificar-cadastro/"+verificador.getUuid());
+        }).start();
     }
 
     public String verificarCadastro(String uuid) {
